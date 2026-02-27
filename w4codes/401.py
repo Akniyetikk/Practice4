@@ -1,4 +1,7 @@
-N = int(input())
-sq = (x*x for x in range(1, N + 1))
-for i in sq:
-    print(i)
+def s(n):
+    for i in range(1, n + 1):
+        yield i * i
+
+n = int(input())
+for square in s(n):
+   print(square)
