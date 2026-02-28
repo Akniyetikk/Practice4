@@ -26,6 +26,49 @@ x = datetime.datetime(2018, 6, 1)
 
 print(x.strftime("%B"))
 
+ex5
+from datetime import datetime
+
+start = datetime.strptime("4:25:40", "%H:%M:%S")
+end = datetime.strptime("11:40:10", "%H:%M:%S")
+
+difference = end - start
+
+seconds = difference.total_seconds()
+print('difference in seconds is:', seconds)
+
+ex6
+import datetime
+​
+obj = datetime.datetime(2001, 12, 9)
+​
+print(obj.strftime("%a %m %y"))
+​
+print(obj.strftime("%m-%d-%Y %T:%M%p"))
+
+Output
+Sun 12 01
+12-09-2001 00:00:00:00AM
+
+ex7
+import datetime
+import pytz
+
+# defining the object and localising it to a timezone
+dt = datetime.datetime(2001, 11, 15, 1, 20, 25)
+tz = pytz.timezone('Asia/Kolkata')
+dt = tz.localize(dt)
+
+# Creating a new timezone
+new_tz = pytz.timezone('America/New_York')
+
+# Changing the timezone of our object
+converted = dt.astimezone(new_tz)
+
+# Printing out new time
+print(converted)
+
+
 A reference of all the legal format codes:
 
 %a	Weekday, short version	Wed	
