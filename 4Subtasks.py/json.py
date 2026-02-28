@@ -1,6 +1,6 @@
 import json
 
-with open("sample-data.json") as f:
+with open("/Users/u_kozhakova/Downloads/sample-data.json") as f:
     data = json.load(f)
 
 print("Interface Status")
